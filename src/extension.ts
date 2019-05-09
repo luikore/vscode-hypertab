@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
         return suffix
     }
 
-    let cycle = vscode.commands.registerTextEditorCommand("YAWCompletion.cycle", (textEditor, edit) => {
+    let cycle = vscode.commands.registerTextEditorCommand("hypertab.tab", (textEditor, edit) => {
         let range = tabOrExpandSnippetOrRange(textEditor);
         if (!range) {
             return
@@ -53,7 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(cycle);
 
-    let cycleBack = vscode.commands.registerTextEditorCommand("YAWCompletion.cycleBack", (textEditor, edit) => {
+    let cycleBack = vscode.commands.registerTextEditorCommand("hypertab.tab.back", (textEditor, edit) => {
         let range = tabOrExpandSnippetOrRange(textEditor);
         if (!range) {
             return
