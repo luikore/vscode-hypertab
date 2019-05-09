@@ -1,0 +1,48 @@
+{
+    "name": "hypertab",
+    "displayName": "The Missing Tab Completion for VS Code",
+    "description": "The Missikg Tab Completion for VS Code",
+    "version": "1.0.0",
+    "publisher": "luikore",
+    "engines": {
+        "vscode": "^1.33.1"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "keybindings": [
+            {
+                "command": "hypertab.tab",
+                "key": "tab",
+                "when": "editorTextFocus && !editorHasMultiSelection && !editorReadOnly && !inSnippetMode && !suggestWidgetVisible"
+            },
+            {
+                "command": "hypertab.tab.back",
+                "key": "shift+tab",
+                "when": "editorTextFocus && !editorHasMultiSelection && !editorReadOnly && !inSnippetMode && !suggestWidgetVisible"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/mocha": "^2.2.32",
+        "@types/node": "^6.0.40",
+        "mocha": "^6.1.4",
+        "typescript": "^2.0.3",
+        "vscode": "^1.1.33"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/luikore/vscode-hypertab"
+    }
+}
