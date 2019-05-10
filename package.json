@@ -2,7 +2,7 @@
     "name": "hypertab",
     "displayName": "The Missing Tab Completion for VS Code",
     "description": "The Missikg Tab Completion for VS Code",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "luikore",
     "engines": {
         "vscode": "^1.33.1"
