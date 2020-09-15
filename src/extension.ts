@@ -101,7 +101,7 @@ export function tabOrExpandSnippetOrRange(textEditor: vscode.TextEditor): vscode
 };
 
 export async function insertSnippets(textEditor: vscode.TextEditor, prevWordRange: vscode.Range, prevWord: string) {
-    await vscode.commands.executeCommand('cursorLeft');
+    await vscode.commands.executeCommand('deleteLeft');
     let uri = textEditor.document.uri;
     let sel = textEditor.selection.active;
     let list = await vscode.commands.executeCommand('vscode.executeCompletionItemProvider', uri, sel);
@@ -112,9 +112,9 @@ export async function insertSnippets(textEditor: vscode.TextEditor, prevWordRang
             let range = new vscode.Range(prevWordRange.start, endPos);
             let ss = item.insertText as vscode.SnippetString;
             textEditor.insertSnippet(ss, range);
+            break;
         }
     }
-    vscode.commands.executeCommand('cursorRight');
 }
 
 export function startOfLine(text: string, startLine: number) {

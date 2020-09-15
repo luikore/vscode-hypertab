@@ -21,9 +21,8 @@ And, shift+tab will cycle back previous word.
 
 ## Development
 
-    npm install -g vsce
-    vsce package
-    code --install-extension *.vsix
+    npm i
+    npm run deploy
 
 ## References
 
